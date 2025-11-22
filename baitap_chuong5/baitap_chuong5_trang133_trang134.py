@@ -96,7 +96,7 @@ class QuanLySinhVien:
 # --- 3. CHƯƠNG TRÌNH CHÍNH (Giao diện người dùng) ---
 def hien_thi_menu():
     """Hiển thị menu chức năng."""
-    print("\n======== ⚙️ CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN ⚙️ ========")
+    print("\n========  CHƯƠNG TRÌNH QUẢN LÝ SINH VIÊN  ========")
     print("1. Thêm sinh viên")
     print("2. Xóa sinh viên")
     print("3. Sửa sinh viên")
@@ -111,7 +111,7 @@ def lay_input_hop_le(prompt):
         data = input(prompt).strip()
         if data:
             return data
-        print("⚠ Giá trị không được để trống. Vui lòng nhập lại.")
+        print(" Giá trị không được để trống. Vui lòng nhập lại.")
 
 
 def main():
