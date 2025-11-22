@@ -38,13 +38,13 @@ class QuanLySinhVien:
         """Thêm một sinh viên mới vào danh sách."""
         # Kiểm tra trùng lặp Mã SV
         if self.tim_sv_theo_ma(ma_sv):
-            print(f"❌ Lỗi: Mã sinh viên **{ma_sv}** đã tồn tại. Thao tác thêm bị hủy.")
+            print(f" Lỗi: Mã sinh viên **{ma_sv}** đã tồn tại. Thao tác thêm bị hủy.")
             return False
 
         # Tạo đối tượng SinhVien và thêm vào danh sách
         sv_moi = SinhVien(ma_sv, ten_sv)
         self.danh_sach_sv.append(sv_moi)
-        print(f"✅ Thêm sinh viên **{ten_sv}** (Mã: {ma_sv}) thành công.")
+        print(f" Thêm sinh viên **{ten_sv}** (Mã: {ma_sv}) thành công.")
         return True
 
     def xoa_sinh_vien(self, ma_sv):
@@ -53,10 +53,10 @@ class QuanLySinhVien:
 
         if sv_can_xoa:
             self.danh_sach_sv.remove(sv_can_xoa)
-            print(f"✅ Xóa sinh viên **{sv_can_xoa.ten_sv}** (Mã: {ma_sv}) thành công.")
+            print(f" Xóa sinh viên **{sv_can_xoa.ten_sv}** (Mã: {ma_sv}) thành công.")
             return True
         else:
-            print(f"❌ Lỗi: Không tìm thấy sinh viên có Mã **{ma_sv}**.")
+            print(f" Lỗi: Không tìm thấy sinh viên có Mã **{ma_sv}**.")
             return False
 
     def sua_sinh_vien(self, ma_sv, ten_moi):
@@ -66,10 +66,10 @@ class QuanLySinhVien:
         if sv_can_sua:
             ten_cu = sv_can_sua.ten_sv
             sv_can_sua.ten_sv = ten_moi
-            print(f"✅ Sửa thành công. SV Mã {ma_sv}: Tên cũ **{ten_cu}** -> Tên mới **{ten_moi}**.")
+            print(f" Sửa thành công. SV Mã {ma_sv}: Tên cũ **{ten_cu}** -> Tên mới **{ten_moi}**.")
             return True
         else:
-            print(f"❌ Lỗi: Không tìm thấy sinh viên có Mã **{ma_sv}**.")
+            print(f" Lỗi: Không tìm thấy sinh viên có Mã **{ma_sv}**.")
             return False
 
     def xem_danh_sach_sv(self):
@@ -78,7 +78,7 @@ class QuanLySinhVien:
             print("\n--- Danh sách sinh viên đang **RỖNG** ---")
             return
 
-        print("\n--- 📚 DANH SÁCH SINH VIÊN HIỆN CÓ 📚 ---")
+        print("\n---  DANH SÁCH SINH VIÊN HIỆN CÓ  ---")
         # Sắp xếp danh sách theo Mã sinh viên (ID)
         ds_sv_sap_xep = sorted(self.danh_sach_sv, key=lambda sv: sv.ma_sv)
 
@@ -147,7 +147,7 @@ def main():
                 ten_moi = lay_input_hop_le(f"Nhập Tên mới cho sinh viên **{sv_ton_tai.ten_sv}**: ")
                 quan_ly.sua_sinh_vien(ma_sv, ten_moi)
             else:
-                print(f"❌ Lỗi: Không tìm thấy sinh viên có Mã **{ma_sv}** để sửa.")
+                print(f" Lỗi: Không tìm thấy sinh viên có Mã **{ma_sv}** để sửa.")
 
         elif lua_chon == '4':
             # 4. Xem danh sách sinh viên
@@ -155,11 +155,11 @@ def main():
 
         elif lua_chon == '5':
             # 5. Thoát
-            print("\n👋 Cảm ơn bạn đã sử dụng chương trình. Tạm biệt!")
+            print("\n Cảm ơn bạn đã sử dụng chương trình. Tạm biệt!")
             sys.exit(0)  # Thoát chương trình
 
         else:
-            print("❗ Lựa chọn không hợp lệ. Vui lòng chọn lại từ 1 đến 5.")
+            print(" Lựa chọn không hợp lệ. Vui lòng chọn lại từ 1 đến 5.")
 
 
 # Gọi hàm main để chạy chương trình
